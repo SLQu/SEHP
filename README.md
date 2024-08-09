@@ -1,7 +1,10 @@
 # Scalable and Effective Negative Sample Generation for Hyperedge Prediction
 
-# environment
+# Environment Setting
 
+<!-- # creat a box to put the code -->
+
+```
 conda create --name hedge python=3.9
 conda activate hedge
 
@@ -25,11 +28,13 @@ pip install ipdb
 pip install pandas
 pip install transformers
 pip install accelerate -U
-pip install sentencepiece
-pip install tiktoken
-pip install openai
-pip install optuna
 pip install configargparse
+```
+
 # Run code
+
+```
 source activate hedge
-python run.py --batch_size 100 --info_stru 1 -- --negative_sample_mode dgns2
+python run.py --dataset_name Recipe100k --batch_size 100 --negative_sample_mode dgns2 --epochs 50 --stru_diff 1 --stru_decoder 1 --diffusion_step 10
+```
+
